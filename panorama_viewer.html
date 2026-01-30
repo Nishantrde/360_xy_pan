@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street View Panorama</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    >
+    <style>
+      body, html {
+        margin: 0;
+        height: 100%;
+        background: #0b0b0f;
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+      }
+      #panorama {
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="panorama"></div>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+      pannellum.viewer('panorama', {
+        type: 'equirectangular',
+        panorama: 'stiched_img.png',
+        autoLoad: true,
+        showZoomCtrl: false,
+        preview: 'stiched_img.png',
+        yaw: 0,
+        hfov: 100
+      });
+    </script>
+  </body>
+</html>
