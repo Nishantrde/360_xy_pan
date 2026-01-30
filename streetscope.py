@@ -6,13 +6,13 @@ import webbrowser
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-STITCHED_IMAGE = BASE_DIR / "stitchedOP.png"
+STITCHED_IMAGE = BASE_DIR / "stitched_img.png"
 HTML_FILE = BASE_DIR / "panorama_viewer.html"
 PORT = 5050
 
 if not STITCHED_IMAGE.exists():
     raise SystemExit(
-        "stitchedOP.png not found. Run pan_cap.py first or provide a stitched image at the root."
+        "stitched_img.png not found. Run pan_cap.py first or provide a stitched image at the root."
     )
 
 html_content = """<!doctype html>
@@ -45,10 +45,10 @@ html_content = """<!doctype html>
     <script>
       pannellum.viewer('panorama', {
         type: 'equirectangular',
-        panorama: 'stitchedOP.png',
+        panorama: 'stitched_img.png',
         autoLoad: true,
         showZoomCtrl: false,
-        preview: 'stitchedOP.png',
+        preview: 'stitched_img.png',
         yaw: 0,
         hfov: 100
       });
